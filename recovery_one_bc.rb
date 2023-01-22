@@ -38,9 +38,10 @@ expectedResults = ["ellohay", "eatway", "yellowway", "eatway orldway", "Ellohay"
 translator = PigLatinTranslator.new
 
 testCases.each_with_index do |phrase, i|
+  translation = translator.translate_phrase(phrase)
   p "-------------------"
   p "Expected: #{expectedResults[i]}"
-  p "Result: #{translator.translate_phrase(phrase)}"
+  p "Result: #{translation}"
   p translation == expectedResults[i] ? "Correct" : "Incorrect"
   p "-------------------"
 end
